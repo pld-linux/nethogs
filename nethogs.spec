@@ -1,12 +1,13 @@
+%define		mver	%(echo %{version} |cut -f 1-2 -d ".")
 Summary:	net top
 Summary(pl):	Sieciowy top
 Name:		nethogs
-Version:	0.4.2
+Version:	0.5.1
 Release:	1
 License:	GPL
 Group:		Networking
 Source0:	http://nethogs.bzzt.net/source/%{name}-%{version}.tar.gz
-# Source0-md5:	dfb5d37f69fb82e65872f8d7a1cd3e1e
+# Source0-md5:	542d489f3e1aaea2b2583511b855da00
 URL:		http://nethogs.bzzt.net/
 BuildRequires:	libpcap-devel
 BuildRequires:	libstdc++-devel
@@ -31,7 +32,7 @@ uruchomiæ NetHogs i od razu zobaczyæ, który PID to powoduje i
 ewentualnie go zabiæ.
 
 %prep
-%setup -q -n %{name}-0.4
+%setup -q -n %{name}-%{mver}
 
 %build
 %{__make} \
