@@ -1,12 +1,12 @@
 Summary:	net top
 Summary(pl):	Sieciowy top
 Name:		nethogs
-Version:	0.4
+Version:	0.4.2
 Release:	2
 License:	GPL
 Group:		Networking
 Source0:	http://nethogs.bzzt.net/source/%{name}-%{version}.tar.gz
-# Source0-md5:	71de460887fa6c3b9c6d5cfb8942f875
+# Source0-md5:	dfb5d37f69fb82e65872f8d7a1cd3e1e
 URL:		http://nethogs.bzzt.net/
 BuildRequires:	libpcap-devel
 BuildRequires:	libstdc++-devel
@@ -31,7 +31,7 @@ uruchomiæ NetHogs i od razu zobaczyæ, który PID to powoduje i
 ewentualnie go zabiæ.
 
 %prep
-%setup -q
+%setup -q -n %{name}-0.4
 
 %build
 %{__make} \
