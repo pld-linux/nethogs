@@ -1,14 +1,12 @@
 Summary:	net top
 Summary(pl):	Sieciowy top
 Name:		nethogs
-Version:	0.3
-Release:	3
+Version:	0.4
+Release:	1
 License:	GPL
 Group:		Networking
 Source0:	http://nethogs.bzzt.net/source/%{name}-%{version}.tar.gz
-# Source0-md5:	439b67fc8c875a3142687758a2c61deb
-Patch0:		%{name}-cxx.patch
-Patch1:		%{name}-comp.patch
+# Source0-md5:	71de460887fa6c3b9c6d5cfb8942f875
 URL:		http://nethogs.bzzt.net/
 BuildRequires:	libpcap-devel
 BuildRequires:	libstdc++-devel
@@ -34,13 +32,11 @@ ewentualnie go zabiæ.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
 
 %build
 %{__make} \
-	compiler="%{__cxx}" \
-	flags="%{rpmcflags} -I/usr/include/ncurses"
+	GCC="%{__cxx}" \
+	CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
