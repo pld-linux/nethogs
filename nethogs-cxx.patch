@@ -1,0 +1,13 @@
+diff -urN nethogs-0.3.org/connection.h nethogs-0.3/connection.h
+--- nethogs-0.3.org/connection.h	2004-01-08 00:16:53.487251582 +0100
++++ nethogs-0.3/connection.h	2004-01-08 00:18:44.767256648 +0100
+@@ -1,6 +1,8 @@
+ #ifndef __CONNECTION_H
+ #define __CONNECTION_H
+ 
++using namespace std;
++
+ #include "packet.h"
+ 
+ class PackList
+
