@@ -2,13 +2,13 @@
 Summary:	net top
 Summary(pl):	Sieciowy top
 Name:		nethogs
-Version:	0.5.1
+Version:	0.6
 Release:	1
 License:	GPL
 Group:		Networking
-Source0:	http://nethogs.bzzt.net/source/%{name}-%{version}.tar.gz
-# Source0-md5:	542d489f3e1aaea2b2583511b855da00
-URL:		http://nethogs.bzzt.net/
+Source0:	http://dl.sourceforge.net/nethogs/%{name}-%{version}.0.tar.gz
+# Source0-md5:	d7fc44acd19cb55ee32137540f6a6f0e
+URL:		http://nethogs.sourceforge.net/
 BuildRequires:	libpcap-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	ncurses-devel
@@ -32,12 +32,12 @@ uruchomiæ NetHogs i od razu zobaczyæ, który PID to powoduje i
 ewentualnie go zabiæ.
 
 %prep
-%setup -q -n %{name}-%{mver}
+%setup -q -n %{name}
 
 %build
 %{__make} \
 	GCC="%{__cxx}" \
-	CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
+	CFLAGS="%{rpmcflags} -I%{_includedir}/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
