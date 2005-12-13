@@ -37,7 +37,7 @@ ewentualnie go zabiæ.
 %build
 %{__make} \
 	GCC="%{__cxx}" \
-	CFLAGS="%{rpmcflags} -I%{_includedir}/ncurses"
+	CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
