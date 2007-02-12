@@ -1,6 +1,6 @@
 %define		mver	%(echo %{version} |cut -f 1-2 -d ".")
 Summary:	net top
-Summary(pl):	Sieciowy top
+Summary(pl.UTF-8):   Sieciowy top
 Name:		nethogs
 Version:	0.6.1
 Release:	0.1
@@ -23,13 +23,13 @@ be loaded. So if there's suddenly a lot of network traffic, you can
 fire up NetHogs and immediately see which PID is causing this, and if
 it's some kind of spinning process, kill it.
 
-%description -l pl
-NetHogs to ma³e narzêdzie sieciowe w stylu programu top. Zamiast
-rozbijania ruchu na protoko³y lub podsieci, jak robi wiêkszo¶æ
-narzêdzi, grupuje pasmo wed³ug procesów - i nie polega przy tym na
-specjalnym module j±dra. Je¶li nagle jest du¿y ruch w sieci, mo¿na
-uruchomiæ NetHogs i od razu zobaczyæ, który PID to powoduje i
-ewentualnie go zabiæ.
+%description -l pl.UTF-8
+NetHogs to maÅ‚e narzÄ™dzie sieciowe w stylu programu top. Zamiast
+rozbijania ruchu na protokoÅ‚y lub podsieci, jak robi wiÄ™kszoÅ›Ä‡
+narzÄ™dzi, grupuje pasmo wedÅ‚ug procesÃ³w - i nie polega przy tym na
+specjalnym module jÄ…dra. JeÅ›li nagle jest duÅ¼y ruch w sieci, moÅ¼na
+uruchomiÄ‡ NetHogs i od razu zobaczyÄ‡, ktÃ³ry PID to powoduje i
+ewentualnie go zabiÄ‡.
 
 %prep
 %setup -q -n %{name}
