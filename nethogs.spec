@@ -1,6 +1,6 @@
 %define		mver	%(echo %{version} |cut -f 1-2 -d ".")
 Summary:	net top
-Summary(pl.UTF-8):   Sieciowy top
+Summary(pl.UTF-8):	Sieciowy top
 Name:		nethogs
 Version:	0.6.1
 Release:	0.1
