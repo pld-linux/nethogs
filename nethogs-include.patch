@@ -1,0 +1,20 @@
+--- nethogs/inodeproc.cpp.org	2008-10-19 18:51:47.216094279 +0000
++++ nethogs/inodeproc.cpp	2008-10-19 18:51:50.706169807 +0000
+@@ -1,6 +1,7 @@
+ /* this comes from netstat.c, but is very useful :)) */
+ #include <dirent.h>
+ #include <errno.h>
++#include <limits.h>
+ #include <string.h>
+ #include <ctype.h>
+ #include <unistd.h>
+--- nethogs/cui.cpp.org	2008-10-19 18:56:14.359808703 +0000
++++ nethogs/cui.cpp	2008-10-19 18:55:56.002727921 +0000
+@@ -2,6 +2,7 @@
+ #include <string>
+ #include <pwd.h>
+ #include <sys/types.h>
++#include <stdlib.h>
+ 
+ #include <ncurses.h>
+ #include "nethogs.h"
