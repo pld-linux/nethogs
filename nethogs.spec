@@ -9,6 +9,7 @@ Group:		Networking
 Source0:	http://nethogs.sourceforge.net/%{name}-%{version}-pre2.tar.gz
 # Source0-md5:	48775d49fe488e601811fbfb09f6b37d
 URL:		http://nethogs.sourceforge.net/
+Patch0:		%{name}-include.patch
 BuildRequires:	libpcap-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	ncurses-devel
@@ -33,6 +34,7 @@ ewentualnie go zabić.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
 
 %build
 %{__make} \
