@@ -1,15 +1,14 @@
-%define		mver	%(echo %{version} |cut -f 1-2 -d ".")
+#%%define		mver	%(echo %{version} |cut -f 1-2 -d ".")
 Summary:	net top
 Summary(pl.UTF-8):	Sieciowy top
 Name:		nethogs
-Version:	0.6.1
+Version:	0.7.0
 Release:	0.1
 License:	GPL
 Group:		Networking
-Source0:	http://nethogs.sourceforge.net/%{name}-%{version}-pre2.tar.gz
-# Source0-md5:	48775d49fe488e601811fbfb09f6b37d
+Source0:	http://dl.sourceforge.net/nethogs/%{name}-%{version}.tar.gz
+# Source0-md5:	e5f04071571e469e14c89f637cfa34a2
 URL:		http://nethogs.sourceforge.net/
-Patch0:		%{name}-include.patch
 BuildRequires:	libpcap-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	ncurses-devel
@@ -34,7 +33,6 @@ ewentualnie go zabić.
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1
 
 %build
 %{__make} \
