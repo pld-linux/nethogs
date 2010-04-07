@@ -3,7 +3,7 @@ Summary:	net top
 Summary(pl.UTF-8):	Sieciowy top
 Name:		nethogs
 Version:	0.7.0
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		Networking
 Source0:	http://dl.sourceforge.net/nethogs/%{name}-%{version}.tar.gz
