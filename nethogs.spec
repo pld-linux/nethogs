@@ -36,8 +36,8 @@ ewentualnie go zabić.
 
 %build
 %{__make} \
-	GCC="%{__cxx}" \
-	CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
+	CXX="%{__cxx}" \
+	CFLAGS="%{rpmcflags} %{rpmcppflags} -I/usr/include/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
