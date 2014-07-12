@@ -2,12 +2,12 @@
 Summary:	net top
 Summary(pl.UTF-8):	Sieciowy top
 Name:		nethogs
-Version:	0.7.0
-Release:	2
+Version:	0.8.0
+Release:	1
 License:	GPL
 Group:		Networking
 Source0:	http://dl.sourceforge.net/nethogs/%{name}-%{version}.tar.gz
-# Source0-md5:	e5f04071571e469e14c89f637cfa34a2
+# Source0-md5:	d6fb12b46e80a50c9b9f91dd48e2b234
 URL:		http://nethogs.sourceforge.net/
 BuildRequires:	libpcap-devel
 BuildRequires:	libstdc++-devel
