@@ -1,13 +1,13 @@
 Summary:	net top
 Summary(pl.UTF-8):	Sieciowy top
 Name:		nethogs
-Version:	0.8.0
+Version:	0.8.1
 Release:	1
 License:	GPL
 Group:		Networking
-Source0:	http://downloads.sourceforge.net/nethogs/%{name}-%{version}.tar.gz
-# Source0-md5:	d6fb12b46e80a50c9b9f91dd48e2b234
-URL:		http://nethogs.sourceforge.net/
+Source0:	http://github.com/raboof/nethogs/archive/v%{version}.tar.gz?/%{name}-%{version}.tar.gz
+# Source0-md5:	cc0aed87c4cc67fc2ffc5f60aa67bf3d
+URL:		http://raboof.github.io/nethogs/
 BuildRequires:	libpcap-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	ncurses-devel
@@ -31,25 +31,27 @@ uruchomić NetHogs i od razu zobaczyć, który PID to powoduje i
 ewentualnie go zabić.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 
 %build
 %{__make} \
 	CXX="%{__cxx}" \
-	CFLAGS="%{rpmcflags} %{rpmcppflags} -I/usr/include/ncurses"
+	CFLAGS="%{rpmcflags} %{rpmcppflags} -I/usr/include/ncurses" \
+	CXXFLAGS="%{rpmcxxflags} %{rpmcppflags} -I/usr/include/ncurses" \
+	LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man8}
 
-install %{name}   $RPM_BUILD_ROOT%{_bindir}
-install %{name}.8 $RPM_BUILD_ROOT%{_mandir}/man8
+cp -p %{name}   $RPM_BUILD_ROOT%{_bindir}
+cp -p %{name}.8 $RPM_BUILD_ROOT%{_mandir}/man8
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changelog README
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man8/*
+%doc Changelog DESIGN README.md
+%attr(755,root,root) %{_bindir}/nethogs
+%{_mandir}/man8/nethogs.8*
